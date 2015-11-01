@@ -17,6 +17,10 @@
 
     <title>Kaka Litière - La litière livrée chez vous</title>
 
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <!-- Custom CSS -->
     <link href="css/kaka.css" rel="stylesheet">
 
@@ -45,15 +49,43 @@
           </tr>
           <tr>
             <td>100% minérale, en sac de 5kg. Chaque sac convient à 1 mois de litière.</td>
-            <td></td>
+            <td>
+              <div class="select-qty">
+                <form>
+                  <button class="button" name="minus" id="qty-minus">-</button>
+                  <input type="text" name="value" id="qty-value" value="1">
+                  <button class="button" name="plus" id="qty-plus">+</button>
+                </form>
+              </div>
+            </td>
           </tr>
           <tr>
             <td>Prix : 10€/sac</td>
             <td></td>
           </tr>
+          <tr>
+            <td></td>
         </table>
       </div>
     </div>
   </div>
 </body>
+<script>
+  $(".button").on("click", function (e) {
+    e.preventDefault();
+    var button = $(this);
+    if (button.attr('id') == 'qty-minus') {
+      var temp = $("#qty-value").val();
+      if (temp > 1) {
+        temp = parseFloat(temp) - 1;
+      } else {
+        temp = 1;
+      }
+      $("#qty-value").val(temp);
+    } else if (button.attr('id') == "qty-plus") {
+      var temp = parseFloat($("#qty-value").val()) + 1;
+      $("#qty-value").val(temp);
+    }
+  });
+</script>
 </html>
