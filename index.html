@@ -20,8 +20,10 @@
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/modal.js"></script>
 
-    <!-- Custom CSS -->
+    <!-- CSS -->
+    <link href="css/modal.css" rel="stylesheet">
     <link href="css/kaka.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -56,7 +58,7 @@
               <button class="button button-left" name="minus" id="qty-minus">-</button>
               <input type="text" name="value" id="qty-value" value="1">
               <button class="button button-right" name="plus" id="qty-plus">+</button>
-              <button class="submit-main" id="submit">Je commande</button>
+              <button class="submit-main" data-toggle="modal" data-target="#myModal">Je commande</button>
             </form>
           </div>
         </div>
@@ -70,9 +72,20 @@
   <div class="strip-black center" id="contact">
     <p>KAKA LITIERE, 42 AVENUE DE LA NATION, PARIS 75008</p>
     <p>01 45 78 32 14 LITIEREKAKA@GMAIL.COM</p>
-    <a href="https://www.facebook.com/kakalitiere/" class="svg">
+    <a href="https://www.facebook.com/kakalitiere/" target="_blank">
       <img src="assets/img/facebook.svg" height="40px">
     </a>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 <script>
@@ -91,6 +104,9 @@
       var temp = parseFloat($("#qty-value").val()) + 1;
       $("#qty-value").val(temp);
     }
+  });
+  $(".submit-main").on("click", function (e) {
+    e.preventDefault();
   });
 </script>
 </html>
