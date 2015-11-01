@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="La litière livrée chez vous.">
+    <meta name="author" content="LazyChef">
+    <meta name="keywords" content="kaka, kaka litière, kakalitiere, litière, litière domicile, litière livraison, kaka livraison, litière facile">
+    <meta property="og:title" content="Kaka Litière - La litière livrée chez vous">
+    <meta property="og:site_name" content="Kaka Litière">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content=" <!-- Add image link here --> ">
+    <meta property="og:description" content="Kaka Litière, c'est la litière livrée directement chez vous, sans effort.">
+    <meta property="fb:admins" content="912496455461366">
+
+
+    <title>Kaka Litière - La litière livrée chez vous</title>
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/modal.js"></script>
+
+    <!-- CSS -->
+    <link href="css/modal.css" rel="stylesheet">
+    <link href="css/kaka.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="nav-element left">
+        <object type="image/svg+xml" data="assets/img/logo.svg" height="40px">Your browser does not support SVG</object>
+      </div>
+      <div class="nav-element right">
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <div class="main">
+    <h1 class="center">La litière livrée chez vous.</h1>
+    <div class="main-filter">
+      <div class="container">
+        <div>
+          <h2>Litière Kaka</h2>
+        </div>
+        <div class="table">
+          <div class="desc">
+            100% minérale, en sac de 5kg. Chaque sac convient à 1 mois de litière.<br>
+            Prix : 10 € / sac
+          </div>
+          <div class="select-qty">
+            <form>
+              <button class="button button-left" name="minus" id="qty-minus">-</button>
+              <input type="text" name="value" id="qty-value" value="1">
+              <button class="button button-right" name="plus" id="qty-plus">+</button>
+              <button class="submit-main" data-toggle="modal" data-target="#myModal">Je commande</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="strip">
+    <h2>On s'occupe de tout.</h2>
+    <p>Nous livrons au lieu et à l’heure de votre choix, partout dans Paris et en banlieue. Finies les galères avec des sacs surchargés, faîtes-vous livrer directement et à moindre coût.</p>
+  </div>
+  <div class="strip-black center" id="contact">
+    <p>KAKA LITIERE, 42 AVENUE DE LA NATION, PARIS 75008</p>
+    <p>01 45 78 32 14 LITIEREKAKA@GMAIL.COM</p>
+    <a href="https://www.facebook.com/kakalitiere/" target="_blank">
+      <img src="assets/img/facebook.svg" height="40px">
+    </a>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(".button").on("click", function (e) {
+    e.preventDefault();
+    var button = $(this);
+    if (button.attr('id') == 'qty-minus') {
+      var temp = $("#qty-value").val();
+      if (temp > 1) {
+        temp = parseFloat(temp) - 1;
+      } else {
+        temp = 1;
+      }
+      $("#qty-value").val(temp);
+    } else if (button.attr('id') == "qty-plus") {
+      var temp = parseFloat($("#qty-value").val()) + 1;
+      $("#qty-value").val(temp);
+    }
+  });
+  $(".submit-main").on("click", function (e) {
+    e.preventDefault();
+  });
+</script>
+</html>

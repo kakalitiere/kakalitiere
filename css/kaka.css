@@ -1,0 +1,233 @@
+/**
+KAKA LITIERE CSS
+**/
+
+body {
+  font-size: 1em;
+  color: #161819;
+  font-family: 'Lato', Helvetica, sans-serif;
+  font-weight: 400;
+  margin: 0
+}
+
+h1, h2, h3, h4 {
+  color: #FFFFFF;
+  text-shadow: 3px 3px 4px #161819;
+  margin: 0
+}
+
+h1 {
+  padding-top: 1.5em;
+  font-size: 3em
+}
+
+a {
+  color: #003153;
+  text-decoration: none
+}
+
+nav {
+  font-size: 25px;
+  width: 100%;
+  height: 45px;
+  padding: 5px 0px;
+  border-bottom: 1px solid #161819
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Lato', Helvetica, sans-serif;
+}
+
+nav .container,
+.strip {
+  margin: auto;
+  max-width: 640px
+}
+
+.main h1 {
+  padding-left: 1em;
+  padding-right: 1em
+}
+
+.center {
+  text-align: center
+}
+
+.nav-element {
+  height: 40px;
+  line-height: 40px;
+  margin: 0px 5px 0px 5px
+}
+
+.left {
+  float: left
+}
+
+.right {
+  float: right
+}
+
+.main {
+  background-image: url('../assets/img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 500px;
+  position: relative
+}
+
+.main-filter {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  height: 220px;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.main-filter .container {
+  color: #FFFFFF;
+  width: 100%;
+  margin: 0em auto;
+  padding: 0.5em
+}
+
+.container h2 {
+  padding-left: 16px
+}
+
+.table {
+  display: inline-block;
+}
+
+.table div {
+  margin: auto
+}
+
+.desc {
+  float:left;
+  padding: 0em 1em 0.5em 1em;
+}
+
+.main-filter .container h2 {
+  color: #FFFFFF;
+  margin-bottom: 0.2em
+}
+
+.select-qty {
+  text-align: center;
+  margin: auto;
+  width: 150px
+}
+
+.select-qty input,
+.select-qty .button {
+  float: left;
+  width: 50px;
+  height: 40px;
+  border: 0;
+  font-size: 20px;
+  box-sizing: border-box
+}
+
+.select-qty input {
+  text-align: center;
+}
+
+.select-qty .button {
+  background-color: #028DF0;
+  color: #FFFFFF;
+  margin-bottom: 0.5em
+}
+
+.select-qty .button-left {
+  border-radius: 5px 0px 0px 5px
+}
+
+.select-qty .button-right {
+  border-radius: 0px 5px 5px 0px
+}
+
+.submit-main {
+  padding: 0.5em 1em;
+  background-color: #028DF0;
+  color: #FFFFFF;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 5px;
+  border-bottom: 3px solid #024C80;
+  margin-bottom: 1em;
+}
+
+.strip {
+  padding: 2em 0em
+}
+
+.strip h2 {
+  text-shadow: none;
+  color: #003153
+}
+
+.strip-black {
+  font-weight: 300;
+  height: 170px;
+  padding: 2em 0em;
+  background-color: #222;
+  color: #FFFFFF;
+  letter-spacing: 3px
+}
+
+.strip-black img {
+  padding-top: 1em
+}
+
+.modal {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    font-size: 1em;
+  }
+  .main-filter .container {
+    margin-top: 1em;
+    max-width: 400px
+  }
+  .table div {
+    max-width: 200px
+  }
+  .table {
+    display: inline-block;
+  }
+
+  .table div {
+    max-width: 200px;
+    margin: auto
+  }
+
+  .desc {
+    padding-top: 0.5em;
+    float:left;
+  }
+
+  .main-filter .container h2 {
+    color: #FFFFFF;
+    margin-bottom: 0.2em
+  }
+
+  .select-qty {
+    float: right;
+    width: 150px
+  }
+
+  .select-qty input,
+  .select-qty .button {
+    float: left;
+    width: 50px;
+    height: 40px;
+    border: 0;
+    font-size: 20px;
+    box-sizing: border-box
+  }
+}
