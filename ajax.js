@@ -7,6 +7,7 @@
 
 
 $(document).ready(function() {
+
   selectSchedule();
   $('#ButtonSubmit').on('click', function() {
     var email         = $('#email').val();
@@ -18,8 +19,19 @@ $(document).ready(function() {
     var schedule      = $('.schedule button.btn-active').html();
 
     $.ajax({
+      url: "https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse",
+      data: {
 
-    });
+      },
+      type: "POST",
+      dataType: "xml",
+      statusCode: {
+        0: function () {
+        },
+        200: function () {
+        }
+      }
+    }
   });
 });
 
