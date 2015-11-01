@@ -21,9 +21,11 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/ajax.js"></script>
 
     <!-- CSS -->
     <link href="css/modal.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
     <link href="css/kaka.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -82,7 +84,23 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+          <form action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
+            <input type="text" class="form-control" id="full-name" placeholder="Nom complet">
+            <input type="email" class="form-control" id="email" placeholder="Email">
+            <input type="text" class="form-control" id="address" placeholder="Adresse (rue, numéro)">
+            <input type="text" class="form-control" id="city" placeholder="Ville">
+            <input type="tel"  class="form-control"id="phone-number" placeholder="Téléphone">
+            <input type="date"  class="form-control"id="delivery-date" placeholder="Date de livraison">
+          ​
+            <div class="schedule">
+              <button class="btn">8h - 10h</button>
+              <button class="btn">12h - 14h</button>
+              <button class="btn">14h - 16h</button>
+              <button class="btn">16h - 18h</button>
+            </div>
+          ​
+            <button type="button" id="ButtonSubmit" class="btn btn-primary">Send</button>
+          </form>
         </div>
       </div>
     </div>
