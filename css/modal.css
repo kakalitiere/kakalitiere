@@ -97,6 +97,9 @@
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
 }
+.modal-footer {
+  clear: both;
+}
 .modal-scrollbar-measure {
   position: absolute;
   top: -9999px;

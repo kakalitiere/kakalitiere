@@ -84,13 +84,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-body">
-          <form action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
+          <h2>Où et quand souhaitez-vous être livré(e) ?</h2>
+          <form class="form-modal center" action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
             <input type="text" class="form-control" id="full-name" placeholder="Nom complet">
             <input type="email" class="form-control" id="email" placeholder="Email">
             <input type="text" class="form-control" id="address" placeholder="Adresse (rue, numéro)">
             <input type="text" class="form-control" id="city" placeholder="Ville">
-            <input type="tel"  class="form-control"id="phone-number" placeholder="Téléphone">
-            <input type="date"  class="form-control"id="delivery-date" placeholder="Date de livraison">
+            <input type="tel"  class="form-control" id="phone-number" placeholder="Téléphone">
+            <input type="date"  class="form-control" id="delivery-date" placeholder="Date de livraison">
           ​
             <div class="schedule">
               <button class="btn">8h - 10h</button>
@@ -98,8 +99,12 @@
               <button class="btn">14h - 16h</button>
               <button class="btn">16h - 18h</button>
             </div>
-          ​
-            <button type="button" id="ButtonSubmit" class="btn btn-primary">Send</button>
+
+            <div class="modal-footer">
+              <button type="button" id="ButtonSubmit" class="btn-cancel">Annuler</button>
+              <button type="button" id="ButtonSubmit" class="btn-confirm">Continuer</button>
+            </div>
+            <div class="clear-both"></div>
           </form>
         </div>
       </div>
