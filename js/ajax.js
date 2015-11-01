@@ -21,7 +21,13 @@ $(document).ready(function() {
     $.ajax({
       url: "https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse",
       data: {
-
+        "entry_753376097": fullName,
+        "entry_1295862764": email,
+        "entry_821287296": address,
+        "entry_264134378": city,
+        "entry_1812072116": phoneNumber,
+        "entry_1967276050": deliveryDate,
+        "entry_914462665": schedule
       },
       type: "POST",
       dataType: "xml",
@@ -31,7 +37,7 @@ $(document).ready(function() {
         200: function () {
         }
       }
-    }
+    })
   });
 });
 
