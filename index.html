@@ -85,24 +85,25 @@
       <div class="modal-content">
         <div class="modal-body">
           <h2>Où et quand souhaitez-vous être livré(e) ?</h2>
-          <form class="form-modal center" action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
-            <input type="text" class="form-control" id="full-name" placeholder="Nom complet">
-            <input type="email" class="form-control" id="email" placeholder="Email">
-            <input type="text" class="form-control" id="address" placeholder="Adresse (rue, numéro)">
-            <input type="text" class="form-control" id="city" placeholder="Ville">
-            <input type="tel"  class="form-control" id="phone-number" placeholder="Téléphone">
-            <input type="date"  class="form-control" id="delivery-date" placeholder="Date de livraison">
+          <form id="foo" class="form-modal center" action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
+            <input type="text" class="form-control" id="full-name" name="full-name" placeholder="Nom complet" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Adresse (rue, numéro)" required>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Ville" required>
+            <input type="text" class="form-control" id="code-building" name="code-building" placeholder="Code de l'immeuble">
+            <input type="tel"  class="form-control" id="phone-number" name="telephone" placeholder="Téléphone" required>
+            <input type="date"  class="form-control" id="delivery-date" name="delivery-date" placeholder="Date de livraison" required>
           ​
             <div class="schedule">
-              <button class="btn">08h - 10h</button>
-              <button class="btn">12h - 14h</button><br>
-              <button class="btn">14h - 16h</button>
-              <button class="btn">16h - 18h</button>
+              <button class="btn select-hour" name="810">08h - 10h</button>
+              <button class="btn select-hour" name="1012">10h - 12h</button><br>
+              <button class="btn select-hour" name="1416">14h - 16h</button>
+              <button class="btn select-hour" name="1618">16h - 18h</button>
             </div>
 
             <div class="modal-footer">
               <button type="button" id="cancel" class="btn-cancel">Annuler</button>
-              <button type="button" id="ButtonSubmit" class="btn-confirm">Continuer</button>
+              <input type="submit" id="btn-confirm" value="Confirmer" data-toggle="modal" data-target="#myModal">
             </div>
             <div class="clear-both"></div>
           </form>
@@ -131,5 +132,61 @@
   $(".submit-main").on("click", function (e) {
     e.preventDefault();
   });
+</script>
+<script data-cfasync="false" type="text/javascript">
+jQuery( document ).ready(function( $ ) {
+	// variable to hold request
+	var request;
+	// bind to the submit event of our form
+  $(".select-hour").on("click", function (e) {
+    e.preventDefault();
+  });
+	$("#foo").submit(function(event){
+		// abort any pending request
+		if (request) {
+			request.abort();
+		}
+		// setup some local variables
+		var $form = $(this);
+		// let's select and cache all the fields
+		var $inputs = $form.find("input, select, button, textarea");
+		// serialize the data in the form
+		var serializedData = $form.serialize();
+		// let's disable the inputs for the duration of the ajax request
+		// Note: we disable elements AFTER the form data has been serialized.
+		// Disabled form elements will not be serialized.
+		$inputs.prop("disabled", true);
+		// fire off the request to /form.php
+		request = $.ajax({
+      url: "https://script.google.com/macros/s/AKfycbzbtKWG0bEV_CV6VaIeUlCX6sZKqEHDJ8bMcdJzvApU3WUdo8o/exec",  // clone
+			type: "post",
+			data: serializedData
+		});
+		// callback handler that will be called on success
+		request.done(function (response, textStatus, jqXHR){
+			// log a message to the console
+      console.log(response, textStatus, jqXHR);
+			$('#result').html('<a href="https://docs.google.com/spreadsheets/d/10tt64TiALYhPMqR2fh9JzkuhxW7oC0rXXPb_pmJ7HAY/edit?usp=sharing" target="_blank">Success - see Google Sheet</a>');
+			console.log("Hooray, it worked!");
+		});
+		// callback handler that will be called on failure
+		request.fail(function (jqXHR, textStatus, errorThrown){
+			// log the error to the console
+			console.error(
+				"The following error occured: "+
+				textStatus, errorThrown
+			);
+		});
+		// callback handler that will be called regardless
+		// if the request failed or succeeded
+		request.always(function () {
+			// reenable the inputs
+			$inputs.prop("disabled", false);
+		});
+		// prevent default posting of form
+		event.preventDefault();
+    //$("#myModal").hide();
+	});
+});
 </script>
 </html>
