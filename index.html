@@ -21,7 +21,6 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/modal.js"></script>
-    <script src="js/ajax.js"></script>
 
     <!-- CSS -->
     <link href="css/modal.css" rel="stylesheet">
@@ -85,7 +84,7 @@
       <div class="modal-content">
         <div class="modal-body">
           <h2>Où et quand souhaitez-vous être livré(e) ?</h2>
-          <form id="foo" class="form-modal center" action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
+          <form id="checkout-form" class="form-modal center" action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
             <input type="text" class="form-control" id="full-name" name="full-name" placeholder="Nom complet" required>
             <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
             <input type="text" class="form-control" id="address" name="address" placeholder="Adresse (rue, numéro)" required>
@@ -112,6 +111,8 @@
     </div>
   </div>
 </body>
+
+<!-- Gestion des interactions users sur la page -->
 <script>
   $(".button").on("click", function (e) {
     e.preventDefault();
@@ -132,7 +133,16 @@
   $(".submit-main").on("click", function (e) {
     e.preventDefault();
   });
+
+  // Gestion des classes sur les horaires
+  $(".schedule button").on('click', function() {
+    // Ajout de la class btn-active sur le bouton cliqué et seulement celui-ci
+    $(".select-hour").removeClass('btn-active');
+    $(this).addClass('btn-active');
+  });
 </script>
+
+<!-- Ajax request vers la Google Spreadsheet -->
 <script data-cfasync="false" type="text/javascript">
 jQuery( document ).ready(function( $ ) {
 	// variable to hold request
@@ -141,7 +151,7 @@ jQuery( document ).ready(function( $ ) {
   $(".select-hour").on("click", function (e) {
     e.preventDefault();
   });
-	$("#foo").submit(function(event){
+	$("#checkout-form").submit(function(event){
 		// abort any pending request
 		if (request) {
 			request.abort();
@@ -152,6 +162,10 @@ jQuery( document ).ready(function( $ ) {
 		var $inputs = $form.find("input, select, button, textarea");
 		// serialize the data in the form
 		var serializedData = $form.serialize();
+    // => full-name=Nicolas+Filzi&email=nfilzi.webservices%40gmail.com&address=4+place+Charles+Fillion&city=Paris&code-building=&telephone=0678380989&delivery-date=2015-11-08
+    var hour = $('.btn-active').html();
+    serializedData = serializedData + "&hour=" + hour;
+
 		// let's disable the inputs for the duration of the ajax request
 		// Note: we disable elements AFTER the form data has been serialized.
 		// Disabled form elements will not be serialized.
