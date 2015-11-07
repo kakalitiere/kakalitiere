@@ -103,13 +103,14 @@
             <input type="date"  class="form-control" id="delivery-date" name="delivery-date" placeholder="Date de livraison" required>
           ​
             <div class="schedule">
-              <button class="btn select-hour" name="810">08h - 10h</button>
-              <button class="btn select-hour" name="1012">10h - 12h</button><br>
-              <button class="btn select-hour" name="1416">14h - 16h</button>
-              <button class="btn select-hour" name="1618">16h - 18h</button>
+              <button class="btn select-hour">10h - 12h</button>
+              <button class="btn select-hour">12h - 14h</button>
+              <button class="btn select-hour">14h - 16h</button>
+              <button class="btn select-hour">16h - 18h</button>
+              <button class="btn select-hour">18h - 22h</button>
             </div>
 
-            <div class="select-qty">
+            <div class="select-qty-modal">
               <form>
                 <button class="button button-left" name="minus" id="qty-minus">-</button>
                 <input type="text" name="value" id="modal-qty-value" value="1">
@@ -162,7 +163,7 @@
   // Gestion de la transmission de la quantité vers la modal
   $(".select-qty button.submit-main").on('click', function(){
     var qty = $(".select-qty input#qty-value").val();
-    $(".modal-body .select-qty input#modal-qty-value").val(qty);
+    $(".modal-body .select-qty-modal input#modal-qty-value").val(qty);
   });
 
   // Gestion de l'ajout/soustraction de quantité dans la modal
@@ -193,8 +194,7 @@ jQuery( document ).ready(function( $ ) {
   $(".select-hour").on("click", function (e) {
     e.preventDefault();
   });
-	$('.modal-footer input[type=submit]').on('click', function(event){
-    console.log("youpeeee");
+	$('.modal-footer input[type=submit]').on('click', function(event) {
 		// abort any pending request
 		if (request) {
 			request.abort();

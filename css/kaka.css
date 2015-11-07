@@ -149,6 +149,38 @@ nav .container,
   border-radius: 0px 5px 5px 0px
 }
 
+.select-qty-modal {
+  text-align: center;
+  margin: auto;
+}
+
+.select-qty-modal input,
+.select-qty-modal .button {
+  width: 50px;
+  height: 40px;
+  border: 0;
+  font-size: 20px;
+  box-sizing: border-box
+}
+
+.select-qty-modal input {
+  text-align: center;
+}
+
+.select-qty-modal .button {
+  background-color: #028DF0;
+  color: #FFFFFF;
+  margin-bottom: 0.5em
+}
+
+.select-qty-modal .button-left {
+  border-radius: 5px 0px 0px 5px
+}
+
+.select-qty-modal .button-right {
+  border-radius: 0px 5px 5px 0px
+}
+
 .submit-main {
   padding: 0.5em 1em;
   background-color: #028DF0;
