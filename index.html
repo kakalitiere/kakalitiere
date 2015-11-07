@@ -100,6 +100,14 @@
               <button class="btn select-hour" name="1618">16h - 18h</button>
             </div>
 
+            <div class="select-qty">
+              <form>
+                <button class="button button-left" name="minus" id="qty-minus">-</button>
+                <input type="text" name="value" id="modal-qty-value" value="1">
+                <button class="button button-right" name="plus" id="qty-plus">+</button>
+              </form>
+            </div>
+
             <div class="modal-footer">
               <button type="button" id="cancel" class="btn-cancel">Annuler</button>
               <input type="submit" id="btn-confirm" value="Confirmer" data-toggle="modal" data-target="#myModal">
@@ -130,6 +138,7 @@
       $("#qty-value").val(temp);
     }
   });
+
   $(".submit-main").on("click", function (e) {
     e.preventDefault();
   });
@@ -139,6 +148,30 @@
     // Ajout de la class btn-active sur le bouton cliqué et seulement celui-ci
     $(".select-hour").removeClass('btn-active');
     $(this).addClass('btn-active');
+  });
+
+  // Gestion de la transmission de la quantité vers la modal
+  $(".select-qty button.submit-main").on('click', function(){
+    var qty = $(".select-qty input#qty-value").val();
+    $(".modal-body .select-qty input#modal-qty-value").val(qty);
+  });
+
+  // Gestion de l'ajout/soustraction de quantité dans la modal
+  $(".modal-body .button").on("click", function (e) {
+    e.preventDefault();
+    var button = $(this);
+    if (button.attr('id') == 'qty-minus') {
+      var temp = $("#modal-qty-value").val();
+      if (temp > 1) {
+        temp = parseFloat(temp) - 1;
+      } else {
+        temp = 1;
+      }
+      $("#modal-qty-value").val(temp);
+    } else if (button.attr('id') == "qty-plus") {
+      var temp = parseFloat($("#modal-qty-value").val()) + 1;
+      $("#modal-qty-value").val(temp);
+    }
   });
 </script>
 
@@ -151,20 +184,22 @@ jQuery( document ).ready(function( $ ) {
   $(".select-hour").on("click", function (e) {
     e.preventDefault();
   });
-	$("#checkout-form").submit(function(event){
+	$('.modal-footer input[type=submit]').on('click', function(event){
+    console.log("youpeeee");
 		// abort any pending request
 		if (request) {
 			request.abort();
 		}
 		// setup some local variables
-		var $form = $(this);
+		var $form = $('#checkout-form');
 		// let's select and cache all the fields
 		var $inputs = $form.find("input, select, button, textarea");
 		// serialize the data in the form
 		var serializedData = $form.serialize();
     // => full-name=Nicolas+Filzi&email=nfilzi.webservices%40gmail.com&address=4+place+Charles+Fillion&city=Paris&code-building=&telephone=0678380989&delivery-date=2015-11-08
     var hour = $('.btn-active').html();
-    serializedData = serializedData + "&hour=" + hour;
+    var qty = $('#modal-qty-value').val();
+    serializedData = serializedData + "&hour=" + hour + "&qty=" + qty;
 
 		// let's disable the inputs for the duration of the ajax request
 		// Note: we disable elements AFTER the form data has been serialized.
