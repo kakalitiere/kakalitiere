@@ -69,7 +69,7 @@ nav .container,
 }
 
 .main {
-  background-image: url('../assets/img/background.jpg');
+  background-image: url('../assets/img/grumpy-cat.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -161,7 +161,18 @@ nav .container,
 }
 
 .strip {
-  padding: 2em 0em
+  padding: 4em 0em 0em;
+  text-align: center
+}
+
+.strip:last-child {
+  padding: 4em 0em 4em
+}
+
+.legal{
+  margin: auto;
+  max-width: 640px;
+  padding: 3em 0em 3em
 }
 
 h2 {
@@ -176,6 +187,12 @@ h2 {
   background-color: #222;
   color: #FFFFFF;
   letter-spacing: 3px
+}
+
+.strip-black a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  font-size: smaller
 }
 
 .strip-black img {
