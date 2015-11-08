@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="La litière livrée chez vous.">
-    <meta name="author" content="Kaka Litière">
-    <meta name="keywords" content="kaka, kaka litière, kakalitiere, litière, litière domicile, litière livraison, kaka livraison, litière facile">
-    <meta property="og:title" content="Kaka Litière - La litière livrée chez vous">
-    <meta property="og:site_name" content="Kaka Litière">
+    <meta name="description" content="La liti&egrave;re livr&eacute;e chez vous.">
+    <meta name="author" content="Kaka Liti&egrave;re">
+    <meta name="keywords" content="kaka, kaka liti&egrave;re, kakalitiere, liti&egrave;re, liti&egrave;re domicile, liti&egrave;re livraison, kaka livraison, liti&egrave;re facile">
+    <meta property="og:title" content="Kaka Liti&egrave;re - La liti&egrave;re livr&eacute;e chez vous">
+    <meta property="og:site_name" content="Kaka Liti&egrave;re">
     <meta property="og:type" content="website">
     <meta property="og:image" content=" <!-- Add image link here --> ">
-    <meta property="og:description" content="Kaka Litière, c'est la litière livrée directement chez vous, sans effort.">
+    <meta property="og:description" content="Kaka Liti&egrave;re, c'est la liti&egrave;re livr&eacute;e directement chez vous, sans effort.">
     <meta property="fb:admins" content="912496455461366">
 
-    <title>Kaka Litière - La litière livrée chez vous</title>
+    <title>Kaka Liti&egrave;re - La liti&egrave;re livr&eacute;e chez vous</title>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -41,15 +41,15 @@
     </div>
   </nav>
   <div class="main">
-    <h1 class="center">La litière livrée chez vous.</h1>
+    <h1 class="center">La liti&egrave;re livr&eacute;e chez vous.</h1>
     <div class="main-filter">
       <div class="container">
         <div>
-          <h2>Litière Kaka</h2>
+          <h2>Liti&egrave;re Kaka</h2>
         </div>
         <div class="table">
           <div class="desc">
-            100% minérale, en sac de 5kg. Chaque sac convient à 1 mois de litière.<br>
+            100% min&eacute;rale, en sac de 5kg. Chaque sac convient &agrave; 1 mois de liti&egrave;re.<br>
             Prix : 10 € / sac
           </div>
           <div class="select-qty">
@@ -66,16 +66,16 @@
   </div>
   <div class="description-div">
     <div class="strip">
-      <h2>On s'occupe de tout.</h2>
-      <p>Nous livrons au lieu et à l’heure de votre choix, partout dans Paris et en banlieue. Finies les galères avec des sacs surchargés, faîtes-vous livrer directement et à moindre coût.</p>
+      <h2>On s'occupe de tout, vous payez &agrave; la livraison.</h2>
+      <p>Nous livrons au lieu et &agrave; l’heure de votre choix, partout dans Paris et en banlieue. Finies les gal&egrave;res avec des sacs surcharg&eacute;s, fa&icirc;tes-vous livrer directement et &agrave; moindre co&ucirc;t.</p>
     </div>
     <div class="strip">
-      <h2>Un produit de qualité au prix le plus compétitif.</h2>
-      <p>Notre litière est 100% minérale, sans additif, pour préserver la santé de vos chats chéris. Nous nous occupons nous-mêmes de la livraison pour vous garantir un prix des plus compétitifs, sans les embêtements habituels.</p>
+      <h2>Un produit de qualit&eacute; au prix le plus comp&eacute;titif.</h2>
+      <p>Notre liti&egrave;re est 100% min&eacute;rale, sans additif, pour pr&eacute;server la sant&eacute; de vos chats ch&eacute;ris. Nous nous occupons nous-m&ecirc;mes de la livraison pour vous garantir un prix des plus comp&eacute;titifs, sans les emb&ecirc;tements habituels.</p>
     </div>
     <div class="strip">
       <h2>Comme commander une pizza.</h2>
-      <p>Vous pouvez commander pour le jour-même, et le paiement s'effectue en espèces à la livraison. Comme pour une pizza, mais pour votre chat. :)</p>
+      <p>Vous pouvez commander pour le jour-m&ecirc;me, et le paiement s'effectue en esp&egrave;ces &agrave; la livraison. Comme pour une pizza, mais pour votre chat. :)</p>
     </div>
   </div>
   <div class="strip-black center" id="contact">
@@ -86,21 +86,21 @@
       <img src="assets/img/facebook.svg" height="40px">
     </a>
   </div>
-  <!-- Modal -->
+  <!-- Modal de commade -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
+      <!-- Modal contenu-->
       <div class="modal-content">
-        <div class="modal-body">
-          <h2>Où et quand souhaitez-vous être livré(e) ?</h2>
+        <div class="modal-body" id="orderModal">
+          <h2>O&ugrave; et quand souhaitez-vous &ecirc;tre livr&eacute;(e) ?</h2>
           <form id="checkout-form" class="form-modal center" action="https://docs.google.com/forms/d/1sGL92SNy3ZgXrrCC4_Frx5LohgCTin8ilPc6hA-R_iU/formResponse">
-            <input type="text" class="form-control" id="full-name" name="full-name" placeholder="Nom complet" required>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-            <input type="text" class="form-control" id="address" name="address" placeholder="Adresse (rue, numéro)" required>
-            <input type="text" class="form-control" id="city" name="city" placeholder="Ville" required>
-            <input type="text" class="form-control" id="code-building" name="code-building" placeholder="Code de l'immeuble">
-            <input type="tel"  class="form-control" id="phone-number" name="telephone" placeholder="Téléphone" required>
-            <input type="date"  class="form-control" id="delivery-date" name="delivery-date" placeholder="Date de livraison" required>
+            <input type="text" class="form-control required" id="full-name" name="full-name" placeholder="Nom complet" />
+            <input type="email" class="form-control required" id="email" name="email" placeholder="Email" />
+            <input type="text" class="form-control required" id="address" name="address" placeholder="Adresse (rue, num&eacute;ro)" />
+            <input type="text" class="form-control required" id="city" name="city" placeholder="Ville" />
+            <input type="text" class="form-control" id="code-building" name="code-building" placeholder="Code de l'immeuble" />
+            <input type="tel"  class="form-control required" id="phone-number" name="telephone" placeholder="T&eacute;l&eacute;phone" />
+            <input type="date"  class="form-control required" id="delivery-date" name="delivery-date" placeholder="Date de livraison" />
           ​
             <div class="schedule">
               <button class="btn select-hour">10h - 12h</button>
@@ -111,19 +111,27 @@
             </div>
 
             <div class="select-qty-modal">
-              <form>
                 <button class="button button-left" name="minus" id="qty-minus">-</button>
-                <input type="text" name="value" id="modal-qty-value" value="1">
+                <input type="text" name="value" id="modal-qty-value" value="1" />
                 <button class="button button-right" name="plus" id="qty-plus">+</button>
-              </form>
             </div>
 
             <div class="modal-footer">
               <button type="button" id="cancel" class="btn-cancel" data-toggle="modal" data-target="#myModal">Annuler</button>
-              <input type="submit" id="btn-confirm" value="Confirmer" data-toggle="modal" data-target="#myModal">
+              <input type="submit" id="btn-confirm" class="btn-confirm" value="Confirmer" />
             </div>
             <div class="clear-both"></div>
           </form>
+        </div>
+        <div class="modal-body" id="confirmationModal">
+          <h2 class="center">Super !</h2>
+          <img src="assets/img/thankyou.jpg" width="70%">
+          <h2 class="center">Vous allez recevoir un SMS de confirmation avant votre livraison.</h2>
+          <h2 class="center">Merci de nous faire confiance pour la sant&eacute; de vos tyrans ador&eacute;s.</h2>
+          <div class="modal-footer">
+            <button type="button" class="btn-confirm" data-toggle="modal" data-target="#myModal">Je retourne c&acirc;liner mon chat.</button>
+          </div>
+          <div class="clear-both"></div>
         </div>
       </div>
     </div>
@@ -155,18 +163,18 @@
 
   // Gestion des classes sur les horaires
   $(".schedule button").on('click', function() {
-    // Ajout de la class btn-active sur le bouton cliqué et seulement celui-ci
+    // Ajout de la class btn-active sur le bouton cliqu&eacute; et seulement celui-ci
     $(".select-hour").removeClass('btn-active');
     $(this).addClass('btn-active');
   });
 
-  // Gestion de la transmission de la quantité vers la modal
+  // Gestion de la transmission de la quantit&eacute; vers la modal
   $(".select-qty button.submit-main").on('click', function(){
     var qty = $(".select-qty input#qty-value").val();
     $(".modal-body .select-qty-modal input#modal-qty-value").val(qty);
   });
 
-  // Gestion de l'ajout/soustraction de quantité dans la modal
+  // Gestion de l'ajout/soustraction de quantit&eacute; dans la modal
   $(".modal-body .button").on("click", function (e) {
     e.preventDefault();
     var button = $(this);
@@ -183,12 +191,24 @@
       $("#modal-qty-value").val(temp);
     }
   });
+
+  // Afficher le modal-body de confirmation et cacher le form
+  $(".btn-confirm").on("click", function() {
+    if ($("#orderModal").css("display") == "none") {
+      $("#orderModal").css("display", "block");
+      $("#confirmationModal").css("display", "none");
+    } else {
+      $("#orderModal").css("display", "none");
+      $("#confirmationModal").css("display", "inline");
+    }
+  });
 </script>
 
 <!-- Ajax request vers la Google Spreadsheet -->
 <script data-cfasync="false" type="text/javascript">
 jQuery( document ).ready(function( $ ) {
-	// variable to hold request
+  var required = true;
+  // variable to hold request
 	var request;
 	// bind to the submit event of our form
   $(".select-hour").on("click", function (e) {
@@ -215,6 +235,10 @@ jQuery( document ).ready(function( $ ) {
 		// Disabled form elements will not be serialized.
 		$inputs.prop("disabled", true);
 		// fire off the request to /form.php
+    $(".required").each(function() {
+      if (!$(this).val()) required = false;
+    });
+    if (required) {
 		request = $.ajax({
       url: "https://script.google.com/macros/s/AKfycbzbtKWG0bEV_CV6VaIeUlCX6sZKqEHDJ8bMcdJzvApU3WUdo8o/exec",  // clone
 			type: "post",
@@ -244,6 +268,7 @@ jQuery( document ).ready(function( $ ) {
 		// prevent default posting of form
 		event.preventDefault();
     //$("#myModal").hide();
+  }
 	});
 });
 </script>

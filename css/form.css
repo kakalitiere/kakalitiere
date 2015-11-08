@@ -52,7 +52,7 @@
   margin-bottom: 1em
 }
 
-#btn-confirm {
+.btn-confirm {
   float: right;
   padding: 0.5em 1em;
   background-color: #2DAF4A;
