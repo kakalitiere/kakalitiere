@@ -146,6 +146,10 @@ nav .container,
   box-sizing: border-box
 }
 
+#qty-value {
+  border-radius: 0px
+}
+
 .select-qty input {
   text-align: center;
 }
